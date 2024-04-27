@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Список рецептов{% endblock %}
+{% block content %}
+    <h1>Рецепты</h1>
+    <div class="list-group">
+        {% for recipe in recipes %}
+            <a href="{% url 'recipe_detail' recipe.id %}" class="list-group-item list-group-item-action">{{ recipe.title }} - {{ recipe.category.name }}</a>
+        {% endfor %}
+    </div>
+{% endblock %}
